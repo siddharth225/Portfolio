@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Siddharth Modi — Senior / Staff iOS Engineer, Mobile Platform Architect, SwiftUI & Scalable Systems." />
+  <title>Siddharth Modi | Senior iOS Engineer (Technical Specialist)</title>
+  <link rel="preload" as="image" href="profile-photo.png" />
+  <style>
+    :root {
+      --bg: #070b14;
+      --bg2: #0c1220;
+      --card: rgba(255,255,255,.055);
+      --card2: rgba(255,255,255,.08);
+      --text: #f5f7fb;
+      --muted: #aab4c5;
+      --line: rgba(255,255,255,.10);
+      --accent: #6ea8ff;
+      --accent2: #8b7cff;
+      --good: #70e1b0;
+      --max: 1160px;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 5%, rgba(110,168,255,.17), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(139,124,255,.13), transparent 26%),
+        linear-gradient(180deg, var(--bg), #090e18 50%, #070b14);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7,11,20,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { height: 72px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 20px; }
+    .brand span { color: var(--accent); }
+    .nav-links { display:flex; gap: 24px; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: white; }
+    .menu { display:none; border:1px solid var(--line); background:transparent; color:white; border-radius:10px; padding:8px 11px; }
+
+    .hero { padding: 92px 0 70px; min-height: 720px; display:flex; align-items:center; }
+    .hero-grid { display:grid; grid-template-columns: 1.25fr .75fr; gap: 64px; align-items:center; }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:8px; padding:7px 11px;
+      border:1px solid rgba(110,168,255,.28); background:rgba(110,168,255,.08);
+      border-radius:999px; color:#cfe0ff; font-size:13px; font-weight:700;
+    }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--good); box-shadow:0 0 15px var(--good); }
+    h1 { font-size: clamp(48px, 7vw, 82px); line-height:.98; letter-spacing:-.065em; margin: 24px 0; max-width: 850px; }
+    h1 .gradient {
+      background: linear-gradient(100deg, #fff 10%, #9fc4ff 48%, #9d8fff 92%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .hero-copy { color: var(--muted); font-size: 18px; max-width: 720px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding: 13px 18px; border-radius:13px; border:1px solid var(--line);
+      font-weight:700; font-size:14px; transition:.2s ease;
+    }
+    .btn.primary { background:white; color:#0a0f19; border-color:white; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn.secondary { background:rgba(255,255,255,.04); color:white; }
+
+    .hero-card {
+      border:1px solid var(--line); background:linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.025));
+      border-radius:28px; padding:28px; box-shadow:0 25px 80px rgba(0,0,0,.25);
+    }
+    .terminal { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:13px; color:#b9c6da; }
+    .terminal .key { color:#7db2ff; } .terminal .str { color:#8ee6bd; } .terminal .dim { color:#65738a; }
+    .avatar {
+      width:72px; height:72px; border-radius:20px; display:grid; place-items:center;
+      background:linear-gradient(135deg, #6ea8ff, #8b7cff); color:white; font-weight:900; font-size:24px;
+      margin-bottom:22px;
+    }
+
+    section { padding: 86px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:34px; }
+    .kicker { color:var(--accent); font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; }
+    h2 { margin:8px 0 0; font-size: clamp(30px, 4vw, 48px); letter-spacing:-.045em; line-height:1.05; }
+    .lead { color:var(--muted); max-width:670px; }
+
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .stat { padding:25px; border:1px solid var(--line); background:var(--card); border-radius:18px; }
+    .stat strong { display:block; font-size:34px; letter-spacing:-.05em; }
+    .stat span { color:var(--muted); font-size:13px; }
+
+    .skills { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+    .skill { border:1px solid var(--line); background:var(--card); padding:21px; border-radius:18px; }
+    .skill h3 { margin:0 0 8px; font-size:16px; }
+    .skill p { margin:0; color:var(--muted); font-size:14px; }
+
+    .timeline { position:relative; margin-top:20px; }
+    .timeline:before { content:""; position:absolute; left:10px; top:5px; bottom:5px; width:1px; background:var(--line); }
+    .job { position:relative; padding-left:42px; margin-bottom:44px; }
+    .job:before { content:""; position:absolute; left:4px; top:8px; width:13px; height:13px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 6px rgba(110,168,255,.10); }
+    .job-top { display:flex; justify-content:space-between; gap:20px; align-items:baseline; }
+    .job h3 { margin:0; font-size:21px; }
+    .job .date { color:var(--muted); font-size:13px; white-space:nowrap; }
+    .company { color:#b9cfff; margin:3px 0 14px; font-weight:700; }
+    .job ul { margin:0; padding-left:20px; color:var(--muted); }
+    .job li { margin:7px 0; }
+    .job li strong { color:#e9eef7; }
+
+    .projects { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .project { padding:28px; border:1px solid var(--line); border-radius:22px; background:linear-gradient(145deg, var(--card2), var(--card)); }
+    .project .tag { display:inline-block; font-size:11px; color:#cfe0ff; border:1px solid rgba(110,168,255,.25); border-radius:999px; padding:5px 9px; }
+    .project h3 { font-size:23px; margin:15px 0 8px; }
+    .project p { color:var(--muted); margin:0; }
+    .project .metric { margin-top:18px; color:var(--good); font-weight:800; }
+
+    .quote {
+      border:1px solid var(--line); border-radius:24px; padding:34px;
+      background:linear-gradient(135deg, rgba(110,168,255,.10), rgba(139,124,255,.06));
+    }
+    blockquote { margin:0; font-size:22px; line-height:1.5; letter-spacing:-.02em; }
+    .quote-by { margin-top:22px; color:var(--muted); font-size:14px; }
+    .quote-by strong { color:white; }
+
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .panel { border:1px solid var(--line); border-radius:20px; background:var(--card); padding:25px; }
+    .panel h3 { margin-top:0; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { padding:7px 10px; border:1px solid var(--line); border-radius:999px; color:#c4cedd; font-size:12px; }
+
+    .contact {
+      text-align:center; padding:72px 28px; border:1px solid var(--line); border-radius:28px;
+      background:radial-gradient(circle at 50% 0%, rgba(110,168,255,.13), transparent 55%), var(--card);
+    }
+    .contact h2 { max-width:720px; margin:10px auto 15px; }
+    .contact p { max-width:620px; margin:0 auto; color:var(--muted); }
+    .contact .hero-actions { justify-content:center; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:13px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; }
+
+    @media (max-width: 850px) {
+      .hero-grid, .two-col { grid-template-columns:1fr; }
+      .hero { padding-top:65px; }
+      .stats { grid-template-columns:repeat(2,1fr); }
+      .skills, .projects { grid-template-columns:1fr; }
+      .nav-links { display:none; }
+      .menu { display:block; }
+      .job-top { flex-direction:column; gap:3px; }
+    }
+    @media (max-width: 520px) {
+      .container { width:min(var(--max), calc(100% - 26px)); }
+      h1 { font-size:48px; }
+      .stats { grid-template-columns:1fr; }
+      section { padding:65px 0; }
+    }
+  
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 24px;
+      filter: saturate(.98) contrast(1.02);
+    }
+    .profile-photo-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(110,168,255,.30);
+      background: linear-gradient(145deg, rgba(110,168,255,.10), rgba(139,124,255,.08));
+      box-shadow: 0 25px 80px rgba(0,0,0,.30);
+      min-height: 430px;
+    }
+    .profile-photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 35%;
+      background: linear-gradient(transparent, rgba(7,11,20,.28));
+      pointer-events: none;
+    }
+    @media (max-width: 850px) {
+      .profile-photo-wrap, .profile-photo { min-height: 380px; }
+    }
+
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#top">Siddharth<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#genai">GenAI</a><a href="#experience">Experience</a>
+      <a href="#projects">Projects</a><a href="#recommendation">Recommendation</a><a href="#contact">Contact</a>
+    </div>
+    <button class="menu" onclick="document.querySelector('.nav-links').style.display =
+      document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">Menu</button>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Senior iOS Engineer (Technical Specialist) · Mobile Platform Architect · GenAI Developer</div>
+        <h1>Siddharth Modi<br><span class="gradient">Building scalable iOS platforms</span> that perform.</h1>
+        <p class="hero-copy">
+          Senior iOS Engineer (Technical Specialist) & GenAI-focused mobile developer with 10+ years of experience designing high-performance mobile platforms
+          across enterprise and consumer products. Specialized in Swift, SwiftUI, offline-first systems,
+          modular architecture, performance, and technical leadership.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Explore my work →</a>
+          <a class="btn secondary" href="Siddharth-Modi-Resume.pdf" target="_blank">View Resume</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/siddharth-modi-0827121a7/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="profile-photo-wrap">
+        <img
+          class="profile-photo"
+          src="profile-photo.png"
+          alt="Professional profile photo of Siddharth Modi"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Impact at a glance</div><h2>Engineering with measurable outcomes.</h2></div>
+        <p class="lead">A career focused on architecture, reliability, delivery speed, and products that work at scale.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>10+</strong><span>Years of iOS engineering experience</span></div>
+        <div class="stat"><strong>AI + iOS</strong><span>GenAI-focused mobile engineering direction</span></div>
+        <div class="stat"><strong>5,000+</strong><span>Enterprise daily active users supported</span></div>
+        <div class="stat"><strong>100K+</strong><span>Organic downloads for Fill: PDF Editor</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Core expertise</div><h2>Where I create the most value.</h2></div>
+      </div>
+      <div class="skills">
+        <div class="skill"><h3>Swift & SwiftUI</h3><p>Modern iOS development, reusable component libraries, UIKit → SwiftUI modernization.</p></div>
+        <div class="skill"><h3>Mobile Platform Architecture</h3><p>Scalable system design, clean boundaries, modular architecture, long-term maintainability.</p></div>
+        <div class="skill"><h3>Offline-First Systems</h3><p>Core Data, REST integration, synchronization strategies, resilient data flows.</p></div>
+        <div class="skill"><h3>Performance Engineering</h3><p>Memory management, caching, Instruments, debugging, responsiveness and reliability.</p></div>
+        <div class="skill"><h3>Concurrency</h3><p>Swift Concurrency, async/await, GCD, multithreading and thread-safe design.</p></div>
+        <div class="skill"><h3>CI/CD & Quality</h3><p>Azure DevOps, quality gates, SwiftLint, SonarQube, XCTest and automation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="genai">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">GenAI & Intelligent Mobile Engineering</div><h2>Bringing AI into real mobile products.</h2></div>
+        <p class="lead">Combining deep iOS platform expertise with modern GenAI capabilities to build intelligent, privacy-aware and production-ready mobile experiences.</p>
+      </div>
+      <div class="skills">
+        <div class="skill"><h3>GenAI Application Development</h3><p>LLM-powered product experiences, structured generation, AI-assisted workflows and intelligent mobile features.</p></div>
+        <div class="skill"><h3>AI Agents & Tool Orchestration</h3><p>Designing mobile experiences that can manage context, use tools and turn natural-language intent into product actions.</p></div>
+        <div class="skill"><h3>Apple Intelligence</h3><p>Exploring Foundation Models, App Intents and on-device intelligence as the next layer of native iOS experiences.</p></div>
+        <div class="skill"><h3>AI-Assisted Engineering</h3><p>Practical use of GitHub Copilot and Windsurf for refactoring, debugging, prototyping and accelerating development.</p></div>
+        <div class="skill"><h3>Production AI Architecture</h3><p>Applying existing strengths in system design, security, performance, APIs, caching and reliability to AI-enabled applications.</p></div>
+        <div class="skill"><h3>Target Industries</h3><p>Consumer technology, AI-first products, fintech, enterprise SaaS and intelligent mobile platforms.</p></div>
+      </div>
+
+      <div class="panel" style="margin-top:18px;">
+        <h3>Why this positioning matters</h3>
+        <p style="color:var(--muted); margin-bottom:0;">
+          The market is increasingly looking for engineers who can combine strong software fundamentals with GenAI.
+          Current Apple roles include iOS engineering for agentic systems, while current Apple developer technologies
+          expose Foundation Models, App Intents and on-device AI capabilities. This portfolio positions Siddharth
+          as an <strong style="color:white;">iOS + GenAI engineer</strong> rather than only a traditional mobile developer.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Career</div><h2>Experience that compounds.</h2></div>
+      </div>
+      <div class="timeline">
+        <article class="job">
+          <div class="job-top"><h3>Senior iOS Engineer / Technical Specialist</h3><span class="date">Sep 2021 — Present</span></div>
+          <div class="company">IBM India Pvt Ltd · Pune</div>
+          <ul>
+            <li>Architect and own an <strong>offline-first Core Data + REST sync platform</strong> supporting 10+ enterprise workflows and 5,000+ DAUs.</li>
+            <li>Lead <strong>UIKit → SwiftUI modernization</strong>, accelerating feature delivery by 40% and reducing UI defects.</li>
+            <li>Designed modular <strong>Swift Package Manager architecture</strong> enabling 3+ squads to develop and release independently; reduced monorepo build time by 30%.</li>
+            <li>Drive security-first practices with <strong>Keychain, TLS enforcement and resiliency patterns</strong>.</li>
+            <li>Strengthen CI/CD with <strong>Azure DevOps, SwiftLint and SonarQube</strong>, while partnering across backend, QA, product and security.</li>
+            <li>Use Firebase Analytics/A-B testing and GenAI tools such as GitHub Copilot and Windsurf to improve engineering effectiveness.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="job-top"><h3>Senior iOS Developer</h3><span class="date">Mar 2018 — Sep 2021</span></div>
+          <div class="company">Moon Technolabs Pvt Ltd · Gujarat</div>
+          <ul>
+            <li>Built <strong>Fill: PDF Editor & E-Sign</strong> from scratch, reaching 100K+ organic downloads and a 4.4★ App Store rating.</li>
+            <li>Developed PDF annotation, form filling, digital signatures, audit trails, encrypted storage and subscription monetization.</li>
+            <li>Optimized Core Data, caching and REST networking for faster and more stable experiences.</li>
+            <li>Used Instruments to diagnose memory leaks, threading issues and performance bottlenecks.</li>
+            <li>Migrated legacy Objective-C codebases to Swift and improved application responsiveness and production stability.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="job-top"><h3>iOS Developer</h3><span class="date">Jun 2016 — Mar 2018</span></div>
+          <div class="company">ShahInfoTech · Maninagar · Hybrid</div>
+          <ul>
+            <li>Migrated legacy Objective-C codebases to Swift to improve maintainability and accelerate feature development.</li>
+            <li>Resolved threading and UI rendering issues to deliver smoother application experiences.</li>
+            <li>Strengthened debugging and QA practices to reduce production crashes and improve stability.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Selected work</div><h2>Products & platform problems.</h2></div>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <span class="tag">Consumer · PDF · iOS</span>
+          <h3>Fill: PDF Editor & E-Sign</h3>
+          <p>Built a full-featured PDF platform from the ground up with annotation, form filling, digital signatures, audit trails, encrypted storage and subscription monetization.</p>
+          <div class="metric">100K+ organic downloads · 4.4★ App Store rating</div>
+        </article>
+        <article class="project">
+          <span class="tag">Enterprise · Architecture</span>
+          <h3>Offline-First Sync Platform</h3>
+          <p>Architected Core Data + REST synchronization across 10+ workflows, improving data consistency and eliminating recurring synchronization-related production incidents.</p>
+          <div class="metric">5,000+ DAUs · 35% consistency improvement</div>
+        </article>
+        <article class="project">
+          <span class="tag">Platform · SwiftUI · SPM</span>
+          <h3>Modular iOS Architecture</h3>
+          <p>Designed an SPM-based modular architecture so multiple squads could develop and release independently with fewer merge conflicts and faster builds.</p>
+          <div class="metric">3+ squads · 30% faster monorepo builds</div>
+        </article>
+        <article class="project">
+          <span class="tag">Modernization · UI</span>
+          <h3>UIKit → SwiftUI Transformation</h3>
+          <p>Led large-scale modernization across product modules, introducing reusable SwiftUI components and shared modules while improving delivery velocity and UI quality.</p>
+          <div class="metric">40% faster feature delivery</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="recommendation">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Professional recommendation</div><h2>What colleagues say.</h2></div>
+      </div>
+      <div class="quote">
+        <blockquote>
+          “Siddharth consistently demonstrates deep technical expertise, professionalism, and a strong commitment to quality.
+          He has an exceptional ability to solve complex technical challenges while delivering scalable, reliable, and polished solutions.
+          Beyond his technical knowledge, he is highly collaborative, detail-oriented, and always focused on driving successful outcomes for both the team and the client.”
+        </blockquote>
+        <div class="quote-by"><strong>Bernardo Tavera</strong> · Senior Application Architect / Solution Engineering Leader · Recommendation dated May 20, 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container two-col">
+      <div class="panel">
+        <h3>Technical toolkit</h3>
+        <div class="chips">
+          <span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">GenAI</span><span class="chip">LLM Applications</span><span class="chip">AI Agents</span><span class="chip">Apple Intelligence</span><span class="chip">UIKit</span><span class="chip">Objective-C</span>
+          <span class="chip">Combine</span><span class="chip">Core Data</span><span class="chip">MVVM</span><span class="chip">Clean Architecture</span>
+          <span class="chip">SPM</span><span class="chip">Async/Await</span><span class="chip">GCD</span><span class="chip">REST APIs</span>
+          <span class="chip">Firebase</span><span class="chip">Keychain</span><span class="chip">XCTest</span><span class="chip">Instruments</span>
+          <span class="chip">Azure DevOps</span><span class="chip">SwiftLint</span><span class="chip">SonarQube</span><span class="chip">Crashlytics</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Education & certifications</h3>
+        <p><strong>B.E. — Information Technology</strong><br>Ahmedabad Institute of Technology · CGPA 8.7</p>
+        <p><strong>Diploma — Information Technology</strong><br>Government Polytechnic, Ahmedabad · CGPA 7.5</p>
+        <p><strong>Certifications:</strong> Azure Data Fundamentals (2025), Azure Fundamentals (2025), Agile Explorer — IBM (2024), IBM iOS Design Essentials (2023).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="kicker">Let’s build something meaningful</div>
+        <h2>Looking for a Senior/Staff iOS engineer who thinks beyond the screen?</h2>
+        <p>Open to opportunities where mobile architecture, engineering excellence and product impact matter.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:siddharth.modi225@gmail.com">Email me</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/siddharth-modi-0827121a7/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Siddharth Modi</span>
+    <span>Senior iOS Engineer (Technical Specialist) · Mobile Platform Architect · GenAI Developer</span>
+  </div>
+</footer>
+</body>
+</html>
