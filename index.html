@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Siddharth Modi — Senior / Staff iOS Engineer, Mobile Platform Architect, SwiftUI & Scalable Systems." />
+  <meta name="description" content="Siddharth Modi — Senior iOS Engineer, Mobile Platform Architect and independent iOS app developer building scalable systems and consumer apps such as SpaceWise and Smart Compressors." />
   <title>Siddharth Modi | Senior iOS Engineer (Technical Specialist)</title>
   <link rel="preload" as="image" href="profile-photo.png" />
   <style>
@@ -118,6 +118,13 @@
     .project h3 { font-size:23px; margin:15px 0 8px; }
     .project p { color:var(--muted); margin:0; }
     .project .metric { margin-top:18px; color:var(--good); font-weight:800; }
+    .project-app { position:relative; overflow:hidden; }
+    .project-app .app-top { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+    .app-icon { width:78px; height:78px; border-radius:18px; object-fit:cover; flex:0 0 78px; box-shadow:0 12px 30px rgba(0,0,0,.28); }
+    .project-app h3 { margin:0 0 4px; }
+    .app-subtitle { color:#b9cfff; font-size:13px; font-weight:700; }
+    .app-link { display:inline-flex; margin-top:20px; padding:9px 13px; border:1px solid rgba(110,168,255,.28); border-radius:10px; color:#d8e6ff; font-size:13px; font-weight:700; }
+    .app-link:hover { background:rgba(110,168,255,.10); transform:translateY(-1px); }
 
     .quote {
       border:1px solid var(--line); border-radius:24px; padding:34px;
@@ -199,7 +206,7 @@
     <a class="brand" href="#top">Siddharth<span>.</span></a>
     <div class="nav-links">
       <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#genai">GenAI</a><a href="#experience">Experience</a>
-      <a href="#projects">Projects</a><a href="#recommendation">Recommendation</a><a href="#contact">Contact</a>
+      <a href="#projects">Projects</a><a href="#apps">Apps</a><a href="#recommendation">Recommendation</a><a href="#contact">Contact</a>
     </div>
     <button class="menu" onclick="document.querySelector('.nav-links').style.display =
       document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">Menu</button>
@@ -365,6 +372,49 @@
           <div class="metric">40% faster feature delivery</div>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Independent iOS products</div><h2>Apps I built and shipped.</h2></div>
+        <p class="lead">Consumer apps focused on storage optimization, file compression, privacy and simple mobile experiences.</p>
+      </div>
+
+      <div class="projects">
+        <article class="project project-app">
+          <div class="app-top">
+            <img class="app-icon" src="spacewise-logo.png" alt="SpaceWise app icon" loading="lazy" />
+            <div>
+              <span class="tag">Consumer · Utilities · iOS</span>
+              <h3>SpaceWise</h3>
+              <div class="app-subtitle">Clean, compress & reclaim storage</div>
+            </div>
+          </div>
+          <p>SpaceWise finds what's consuming your storage and helps shrink it without losing quality. It includes a smart storage dashboard for Photos, Videos, Live Photos, Screenshots, Audio, Files and Contacts.</p>
+          <p style="margin-top:12px;">Key capabilities include photo and video compression, AI-powered near-duplicate photo grouping, separate Live Photos and screenshots, file scanning, duplicate contact cleanup, batch optimization and on-device processing.</p>
+          <div class="metric">Privacy-first · On-device scanning & compression</div>
+          <a class="app-link" href="https://apps.apple.com/in/app/spacewise-clean-compress/id6805761541" target="_blank" rel="noreferrer">View on App Store ↗</a>
+        </article>
+
+        <article class="project project-app">
+          <div class="app-top">
+            <img class="app-icon" src="smart-compressors-logo.png" alt="Smart Compressors app icon" loading="lazy" />
+            <div>
+              <span class="tag">Consumer · Photo & Video · iOS</span>
+              <h3>Smart Compressors</h3>
+              <div class="app-subtitle">Compress files, save space</div>
+            </div>
+          </div>
+          <p>Smart Compressors makes it easy to reduce the size of videos, photos, PDFs and audio files quickly and conveniently. Users can choose a compression level or target size and then save or share the result.</p>
+          <p style="margin-top:12px;">Features include video, image, PDF and audio compression; target sizes in MB/KB or percentage-based compression; before-and-after size comparison; preview before saving; local save and iOS Share Sheet support; and compression history.</p>
+          <div class="metric">MP4 · MOV · M4V · JPEG · JPG · PNG · HEIC · HEIF · WebP · PDF · Audio</div>
+          <a class="app-link" href="https://apps.apple.com/us/app/smart-compressors/id6799370024" target="_blank" rel="noreferrer">View on App Store ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
     </div>
   </section>
 
